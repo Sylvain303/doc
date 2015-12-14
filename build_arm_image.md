@@ -15,9 +15,11 @@ Download a Debian Jessie image compatible with the hardware **without desktop en
 ### Copy image and install YunoHost
 <a class="btn btn-lg btn-default" href="/copy_image">Copy image to the SD card</a>
 
+You must have enough disk space on the flashcard, ensure you have extended the ext4 filesystem.
+
 <a class="btn btn-lg btn-default" href="/plug_and_boot">Plug & boot</a>
 
-* Connect via [SSH](ssh): **root@exemple.tld/ip_address** with the password which you could find on respectives documentations.
+* Connect via [SSH](ssh): **root@exemple.tld/ip_address** with the password which you could find on respectives documentations. (raspbian default user/pass: pi/raspberry)
 * You should be **root** for next operations.
 
 <a class="btn btn-lg btn-default" href="/install_manually">Install YunoHost</a>
@@ -31,7 +33,7 @@ apt-get update && apt-get dist-upgrade && apt-get autoremove
 ```
 * Change hostname:
 ```bash
-hostname -v YunoHost
+hostname -b YunoHost
 ```
 * Set new SSH key generation at first lauching:
 
