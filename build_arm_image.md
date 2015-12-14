@@ -33,7 +33,8 @@ apt-get update && apt-get dist-upgrade && apt-get autoremove
 ```
 * Change hostname:
 ```bash
-hostname -b YunoHost
+echo YunoHost > /etc/hostname
+hostname -F /etc/hostname
 ```
 * Set new SSH key generation at first lauching:
 
@@ -95,6 +96,8 @@ sudo dd bs=1M if=/dev/sdd of=~/yunohost-jessie-board-year-month-day.img
 <div class="alert alert-info">If everything is alright, you could publish your image.</div>
 
 ### Publish image
+* Shrink image size by resizing image read from the SD card.
+ * an example of script is here: http://sirlagz.net/2013/03/10/script-automatic-rpi-image-downsizer/
 * Reduce size by zipping the image:
 ```bash
 zip yunohost-jessie-board-year-month-day.img.zip yunohost-jessie-board-year-month-day.img
