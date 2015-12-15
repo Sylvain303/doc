@@ -17,10 +17,34 @@ Download a Debian Jessie image compatible with the hardware **without desktop en
 
 You must have enough disk space on the flashcard, ensure you have extended the ext4 filesystem.
 
+You forget to expand the filesystem? There's an option inside raspi-config
+
+~~~
+sudo raspi-config
+~~~
+
+~~~
+│    1 Expand Filesystem                         Ensures that all of the SD card storage is a         │
+~~~
+
+Here the systèm will reboot when you quit the menu.
+
 <a class="btn btn-lg btn-default" href="/plug_and_boot">Plug & boot</a>
 
 * Connect via [SSH](ssh): **root@exemple.tld/ip_address** with the password which you could find on respectives documentations. (raspbian default user/pass: pi/raspberry)
 * You should be **root** for next operations.
+* fix locale warning if any, it looks like:
+~~~
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+[…]
+~~~
+
+As root:
+~~~
+sed -i -e '/fr_FR.UTF-8/ s/#//' -e '/en_GB.UTF-8/ s/#//' -e '/en_US.UTF-8/ s/#//' /etc/locale.gen
+locale-gen
+~~~
 
 <a class="btn btn-lg btn-default" href="/install_manually">Install YunoHost</a>
 
