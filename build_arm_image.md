@@ -73,6 +73,11 @@ insserv /etc/init.d/ssh_gen_host_keys
 find /var/log -type f -exec rm {} \;
 ```
 
+* [optional] If you want to publish your image for others, put back qwerty keyboard layout if you changed for something else:
+~~~bash
+# to be completed
+~~~
+
 * Turn off your board:
 ```bash
 shutdown
